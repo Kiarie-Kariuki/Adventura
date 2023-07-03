@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "password": "pass456"
+    }
+  ],
+  "tourPackages": [
+    {
+      "id": 1,
+      "name": "Mountain Expedition",
+      "description": "Experience the thrill of climbing majestic mountains.",
+      "activities": ["Rock climbing", "Hiking", "Campfire"],
+      "price": 500,
+      "image": "./img/Mountain Expedition.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Beach Adventure",
+      "description": "Enjoy sun, sand, and water sports on breathtaking beaches.",
+      "activities": ["Surfing", "Snorkeling", "Beach volleyball"],
+      "price": 350,
+      "image": "./img/Beach Expedition.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Jungle Safari",
+      "description": "Embark on a thrilling wildlife exploration in the dense jungles.",
+      "activities": ["Jeep safari", "Bird watching", "Nature walks"],
+      "price": 450,
+      "image": "./img/Jungle Safari.jpg"
+    }
+  ],
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Mountain Lodge",
+      "location": "Mountain Town",
+      "pricePerNight": 150,
+      "rating": 4.5,
+      "image": "https://example.com/lodge.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Beachfront Resort",
+      "location": "Coastal City",
+      "pricePerNight": 200,
+      "rating": 4.2,
+      "image": "https://example.com/resort.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Jungle Camp",
+      "location": "National Park",
+      "pricePerNight": 100,
+      "rating": 4.7,
+      "image": "https://example.com/camp.jpg"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "tourPackageId": 1,
+      "hotelId": 1,
+      "checkInDate": "2023-07-10",
+      "checkOutDate": "2023-07-15"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "tourPackageId": 2,
+      "hotelId": 2,
+      "checkInDate": "2023-08-05",
+      "checkOutDate": "2023-08-10"
+    }
+  ]
+}
