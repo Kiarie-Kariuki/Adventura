@@ -22,21 +22,47 @@ function getTourPackages(){
                  // Create cards
                 const cardsContainer = document.getElementById('cardsContainer');
 
-                // data.forEach(cardData => {
-                    const card = document.createElement('div');
-                        card.className = 'card';
+                const card = document.createElement('div');
+                    card.className = 'card';
 
-                        card.innerHTML=`
-                        <h3>${obj.name}</h3>
-                        <img src="${obj.image}" alt = 'image'></img>
-                        <p>${obj.description}</p>
-                        `;
+                    card.innerHTML=`
+                    <h3>${obj.name}</h3>
+                    <img src="${obj.image}" alt = 'image'></img>
+                    <p>${obj.description}</p>
+                    <p>Activities: ${obj.activities}</p>
+                    `;
                 cardsContainer.appendChild(card);
-                // });
                
             }
                 
         })
 }
 
+
+//fetching the hotels
+function getHotels(){
+    fetch("https://json-server-c9we.onrender.com/hotels")
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+
+            for(let obj of data){
+               
+                // Create cards
+               const hotelCardsContainer = document.getElementById('hotelCardsContainer');
+
+               const card = document.createElement('div');
+                   card.className = 'card';
+
+                   card.innerHTML=`
+                   <h3>${obj.name}</h3>
+                   <img src="${obj.image}" alt = 'image'></img>
+                   <p>Location: ${obj.location}</p>
+                   <p>Rating: ${obj.rating}</p>
+                   <button id='btn'> Book Hotel </button>
+                   `;
+               hotelCardsContainer.appendChild(card);
+        }
+    })
+}
 
