@@ -59,10 +59,35 @@ function getHotels(){
                    <img src="${obj.image}" alt = 'image'></img>
                    <p>Location: ${obj.location}</p>
                    <p>Rating: ${obj.rating}</p>
-                   <button id='btn'> Book Hotel </button>
+                   <button id='btn'> Book A Room </button>
                    `;
                hotelCardsContainer.appendChild(card);
         }
     })
 }
+
+// fetching client reviews of Adventura
+function getReviews(){
+    fetch('https://json-server-c9we.onrender.com/users')
+        .then((res) => res.json())
+        .then((data) =>{
+            console.log(data)
+            for(let obj of data){
+               
+                // Create cards
+               const reviewCardsContainer = document.getElementById('review');
+
+               const card = document.createElement('div');
+                   card.className = 'card';
+
+                   card.innerHTML=`
+                   <img src="${obj.image}" alt = 'image'></img>
+                   <h3>${obj.name}</h3>
+                   <p>${obj.review}</p>
+                   `;
+               reviewCardsContainer.appendChild(card);
+             }
+        })
+}
+
 
