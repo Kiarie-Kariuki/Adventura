@@ -1,0 +1,93 @@
+*{
+    margin: 0px;
+}
+.logo{
+    display: block;
+    text-align: center;
+}
+.nav-icons{
+    float: right;
+}
+.nav-icons ul{
+    list-style: none;
+    display: flex;
+    padding: 20px;
+}
+.nav-icons ul li{
+    padding-left: 20px;
+    font-size: 20px;
+}
+.landing-area{
+    height: 800px;
+    width: 1700px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(./Images/Wildbeast\ migration.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* text-align: center; */
+    justify-content: center;
+    margin-left: 110px;
+    animation: change 50s infinite ease-in-out;
+ }
+ 
+ @keyframes change{
+    0%
+    {
+        background-image: url(./Images/Adventure-clouds-environment.jpg);
+    }
+    25%
+    {
+        background-image: url(./Images/Beach.jpg);
+    }
+    50%
+    {
+        background-image: url(./Images/Mount-Kilimanjaro-Tanzania.jpg);
+    }  
+    75%
+    {
+        background-image: url(./Images/hot-air-balloon-safaris.jpg);
+    }  
+    100%
+    {
+        background-image: url(./Images/Wildbeast\ migration.jpg);
+    }
+ }
+ .landing-area p{
+    display:block;
+    width: 1000px;
+    text-align: center;
+    align-items: center;
+    margin-top: 350px;
+    background: radial-gradient(circle at 10% 20%, rgb(206, 123, 33) 39.5%, rgba(100, 46, 122, 0.23) 100.2%);
+    margin-left: 350px;
+    font-size: 25px;
+    color: blueviolet;
+    font-weight: 900;
+    
+ }
+
+ .tour{
+    margin-top: 30px;
+    margin-left: 40px;
+ }
+ .tour h2{
+    text-align: center;
+ }
+ .hotels{
+    margin-top: 30px;
+    margin-left: 40px;
+ }
+ .hotels h2{
+    text-align: center;
+ }
+ .feedback .reviews{
+    margin-top: 30px;
+ }
+
+.reviews h4{
+    margin-top: 10px;
+    font-size: 25px;
+    text-align: center;
+}
