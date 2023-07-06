@@ -57,11 +57,11 @@ function getHotels(){
                    card.className = 'cardHotel';
 
                    card.innerHTML=`
-                   <h3>${obj.name}</h3>
+                   <h3 id='hotelName'>${obj.name}</h3>
                    <div class='pic'><img id='hotelimg 'src="${obj.image}" alt = 'image'></img></div>
                    <p>Location: ${obj.location}</p>
                    <p>Rating: ${obj.rating}</p>
-                   <button id='btn'> Book A Room </button>
+                   <button class='btn'> Book A Room </button>
                    `;
                hotelCardsContainer.appendChild(card);
         }
@@ -84,6 +84,7 @@ function getHotels(){
           }, 100);
         }
       }
+      addBookingEventListener();
     })
 }
 
@@ -114,3 +115,70 @@ function getReviews(){
 }
 
 
+//Event listeners
+
+//function to book hotel rooms
+function addBookingEventListener() {
+    const bookButtons = document.getElementsByClassName('btn');
+    const popupContainer = document.getElementById('popupContainer');
+    const popupClose = document.getElementById('popupClose');
+  
+    Array.from(bookButtons).forEach(function (button) {
+      button.addEventListener('click', function (event) {
+        // Show the pop-up
+        popupContainer.style.display = 'block';
+      });
+    });
+  
+    // Close the pop-up when the close button is clicked
+    popupClose.addEventListener('click', function () {
+      popupContainer.style.display = 'none';
+    });
+  
+    // Handle form submission
+    const reservationForm = document.getElementById('reservationForm');
+    reservationForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const hotelName = document.getElementById('hotelName').textContent
+      const userId = 1; //assigning the users an id from 1
+  
+      // Get form input values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const checkInDate = document.getElementById('checkInDate').value;
+      const checkOutDate = document.getElementById('checkOutDate').value;
+  
+      // Create a new booking object
+      const bookingData = {
+        userId: userId,
+        hotelName: hotelName,
+        name: name,
+        email: email,
+        checkInDate: checkInDate,
+        checkOutDate: checkOutDate,
+      };
+  
+      // Send the booking data to the server
+      fetch('https://json-server-c9we.onrender.com/hotelBooking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log('Booking successful:', data);
+          return 'Booking successful.';
+  
+          // Close the pop-up after successful booking
+          popupContainer.style.display = 'none';
+        })
+        .catch((error) => {
+          console.error('Booking failed:', error);
+          return 'Booking failed.';
+        });
+    });
+  }
+  
+  
