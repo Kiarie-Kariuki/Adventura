@@ -32,8 +32,26 @@
     </div>
     <div class="hotels">
         <h2 id="hotel">Hotels & Resorts</h2>
+        <div id="popupContainer" class="popup-container">
+            <div class="popup-content">
+              <h2>Reservation Details</h2>
+              <form id="reservationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="checkInDate">Check-in Date:</label>
+                <input type="date" id="checkInDate" required>
+                <label for="checkOutDate">Check-out Date:</label>
+                <input type="date" id="checkOutDate" required>
+                <button type="submit">Submit</button>
+              </form>
+              <span id="popupClose" class="popup-close">&times;</span>
+            </div>
+        </div>
         <div id="hotelSlideWrapper">
             <div class="hotelCard" id="hotelCardsContainer">
+                  
 
             </div>
         </div>
@@ -76,7 +94,7 @@
                     <h3>Call Us</h3>
                     <p>Phone: +254721444405</p><br>
                     <h3>Email Us</h3><br>
-                    <p>Email: <a>adventura@info.com</a> </p><br>
+                    <p>Email: adventura@info.com </p><br>
                     <h3>Open Hours</h3><br>
                     <p> Weekdays: 8:00a.m. - 4:00p.m. <br> Saturday: 9:00a.m. - 2:00p.m. <br> We remain closed on Sundays.</p>
                 </div>
