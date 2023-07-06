@@ -15,7 +15,7 @@ function getTourPackages(){
             console.log(data) //log the data from the fetch
 
             const heading = document.getElementById('title')
-                console.log(heading) //check if the element has been captured
+                //console.log(heading) //check if the element has been captured
 
             for(let obj of data){
                
@@ -168,17 +168,64 @@ function addBookingEventListener() {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log('Booking successful:', data);
+          //console.log('Booking successful:', data);
           return 'Booking successful.';
+
+          reservationForm.reset()
   
           // Close the pop-up after successful booking
           popupContainer.style.display = 'none';
         })
         .catch((error) => {
-          console.error('Booking failed:', error);
+          //console.log('Booking failed:', error);
           return 'Booking failed.';
         });
     });
   }
+
+
+// Add event listener to the form
+const bookTripForm = document.getElementById('bookTrip');
+bookTripForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get form input values
+  const name = document.getElementById('Name').value;
+  const email = document.getElementById('email').value;
+  const expedition = document.getElementById('expedition').value;
+  const message = document.getElementById('message').value;
+
+  // Create an object with the form data
+  const formData = {
+    name: name,
+    email: email,
+    expedition: expedition,
+    message: message
+  };
+
+  // Send the form data to the server
+  fetch('https://json-server-c9we.onrender.com/tourBooking', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      //console.log('Form submission successful:', data);
+      return 'Form submission successful';
+
+       // Reset form input fields
+       bookTripForm.reset();
+    })
+    .catch((error) => {
+      //console.log('Form submission failed:', error);
+      return 'Form submission failed';
+    });
+});
+
+
+
   
   
