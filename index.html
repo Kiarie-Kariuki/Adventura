@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adventura</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
     <div class="logo">
@@ -13,10 +14,10 @@
     </div>
     <div class="nav-icons">
         <ul>
-            <li>Partner With Us</li>
-            <li>Booking</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
+            <li> <a href="">Partner With Us </a></li>
+            <li> <a href="#bookTrip"> Booking</a></li>
+            <li> <a href="#About">About Us</a></li>
+            <li> <a href="#contactUs">Contact Us</a></li>
         </ul>
     </div>
     <div class="landing-area">
@@ -64,7 +65,7 @@
             </div>
         </div>
     </div>
-    <div class="about">
+    <div class="about" id="About">
         <h1>About Us</h1>
             <div id="travel-text">
                 <p>Adventura is a leading provider of exhilarating adventure travel experiences for thrill-seekers and explorers worldwide. With a passion for discovery and a commitment to delivering unforgettable journeys, we aim to inspire, challenge, and transform the way you experience the world.</p><br>
@@ -84,7 +85,7 @@
                 </p>
             </div>
         </div>
-        <div class="Contact">
+        <div class="Contact" id="contactUs">
             <h1>Contact Us Today</h1>
             <div id="content">
                 <div id="us">
@@ -100,7 +101,7 @@
                 </div>
                 <div id="form">    
                     <h2>Book A Trip</h2>
-                    <form >
+                    <form id="bookTrip">
                         <label for="Name">Your Name</label>
                         <input type="text" id="Name" placeholder="Name"><br>
                         <label for="email">Your Email</label>
@@ -113,6 +114,34 @@
                     </form>
                 </div>
             </div>    
+            <footer>
+                <div id="foot">
+                    <div class="links">
+                        <h4>Get Started</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#About">About Us</a></li>
+                            <li><a href="#contactUs">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="socials">
+                        <h4>Follow Us</h4>
+                        <i class="fa-brands fa-instagram" style="color: #0c2198;"></i>
+                        <i class="fa-brands fa-twitter" style="color: #0c2198;"></i>
+                        <i class="fa-brands fa-tiktok" style="color: #0c2198;"></i>   
+                    </div>    
+                    <div class="res">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li>FAQs</li>
+                            <li>Privacy Policy</li>
+                            <li>Destinations</li>
+                            <li>Travel Packages</li>
+                        </ul>
+                    </div>
+                </div>
+                <p><i class="fa-regular fa-copyright"></i>2023 All Rights Reserved. | Designed by KIARIE.</p>
+            </footer>
     
     <script src="./index.js"></script>
 </body>
